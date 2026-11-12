@@ -4,7 +4,7 @@ const roles = [
   "developer",
   "designer",
   "creator",
-  "coffee enthusiast",
+  "pixel 5 larper",
 ];
 
 const typed = document.getElementById("typed");
