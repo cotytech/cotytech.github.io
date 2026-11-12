@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ✏️ EDIT: page title (shows in the browser tab) and description (shows in link previews) -->
+  <title>Your Name | Links</title>
+  <meta name="description" content="Your short description for link previews.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fade overlay used for smooth transitions between pages (see script.js) -->
+  <div class="fade" aria-hidden="true"></div>
+
+  <!-- ================= TOP NAVIGATION =================
+       Each link scrolls smoothly to the section with the matching id.
+       ✏️ EDIT: rename the labels or add more links. The href must match a section id (e.g. href="#projects" -> id="projects").
+       To link to ANOTHER PAGE with a smooth fade, add data-page, e.g.:
+       <a href="blog.html" data-page>Blog</a>  -->
+  <header class="nav">
+    <a class="brand" href="#home">
+      <!-- ✏️ EDIT: your initials or handle -->
+      <span class="brand-mark">YN</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#links">Links</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ================= HOME / PROFILE ================= -->
+    <section id="home" class="hero">
+      <div class="avatar">
+        <!-- ✏️ EDIT: put your photo file next to index.html and change the src (e.g. "me.jpg").
+             If the file is missing, the initials below are shown instead. -->
+        <img src="avatar.jpg" alt="Profile photo" onerror="this.remove()">
+        <!-- ✏️ EDIT: your initials (fallback) -->
+        <span>YN</span>
+      </div>
+
+      <!-- ✏️ EDIT: YOUR NAME -->
+      <h1>Your Name</h1>
+
+      <!-- Typing line. ✏️ EDIT the list of roles in script.js (the "roles" array) -->
+      <p class="terminal" aria-live="polite">
+        <span class="prompt">$</span> <span id="typed"></span><span class="cursor"></span>
+      </p>
+
+      <!-- ✏️ EDIT: YOUR BIO (1-3 short sentences works best) -->
+      <p class="bio">
+        Write a short bio here. Tell people who you are, what you build, and what you're into.
+      </p>
+    </section>
+
+    <!-- ================= LINKS =================
+         ✏️ EDIT: for each button change:
+           1) href="..."   -> where the button goes
+           2) the label    -> the text on the button
+           3) the handle   -> the small text on the right (or delete the <span class="handle"> line)
+           4) the icon     -> swap the <svg> inside <span class="icon"> (icon library is below)
+         To add a link: copy a whole <a class="link-btn"> ... </a> block.
+         To remove one: delete its block.
+         Add class "featured" to highlight one button in solid orange. -->
+    <section id="links" class="section">
+      <h2>Links</h2>
+      <div class="stack">
+
+        <!-- Featured link (solid orange) -->
+        <a class="link-btn featured" href="https://yourwebsite.com" target="_blank" rel="noopener">
+          <span class="icon">
+            <!-- ICON: globe -->
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </span>
+          <span class="label">My website</span>
+          <span class="handle">yourwebsite.com</span>
+        </a>
+
+        <a class="link-btn" href="https://github.com/yourusername" target="_blank" rel="noopener">
+          <span class="icon">
+            <!-- ICON: GitHub -->
+            <svg viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </span>
+          <span class="label">GitHub</span>
+          <span class="handle">@yourusername</span>
+        </a>
+
+        <a class="link-btn" href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">
+          <span class="icon">
+            <!-- ICON: LinkedIn -->
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </span>
+          <span class="label">LinkedIn</span>
+          <span class="handle">/in/yourusername</span>
+        </a>
+
+        <a class="link-btn" href="https://instagram.com/yourusername" target="_blank" rel="noopener">
+          <span class="icon">
+            <!-- ICON: Instagram -->
+            <svg viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </span>
+          <span class="label">Instagram</span>
+          <span class="handle">@yourusername</span>
+        </a>
+
+        <a class="link-btn" href="https://youtube.com/@yourusername" target="_blank" rel="noopener">
+          <span class="icon">
+            <!-- ICON: YouTube -->
+            <svg viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+          </span>
+          <span class="label">YouTube</span>
+          <span class="handle">@yourusername</span>
+        </a>
+
+        <a class="link-btn" href="https://x.com/yourusername" target="_blank" rel="noopener">
+          <span class="icon">
+            <!-- ICON: X / Twitter -->
+            <svg viewBox="0 0 24 24"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+          </span>
+          <span class="label">X</span>
+          <span class="handle">@yourusername</span>
+        </a>
+
+        <!-- ICON LIBRARY: copy any <svg> below into a button's <span class="icon">
+             Mail:
+             <svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+             Generic link:
+             <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+             Code:
+             <svg viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
+             Download / file:
+             <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+        -->
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS =================
+         ✏️ EDIT: for each project change the href, title, description and tags.
+         Copy a whole <a class="project"> block to add more. -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="stack">
+
+        <a class="project" href="https://github.com/yourusername/project-one" target="_blank" rel="noopener">
+          <h3>Project One</h3>
+          <p>One sentence about what this project does and why it matters.</p>
+          <span class="tags">JavaScript, Node.js, API</span>
+        </a>
+
+        <a class="project" href="https://github.com/yourusername/project-two" target="_blank" rel="noopener">
+          <h3>Project Two</h3>
+          <p>One sentence about what this project does and why it matters.</p>
+          <span class="tags">Python, Machine learning</span>
+        </a>
+
+        <a class="project" href="https://github.com/yourusername/project-three" target="_blank" rel="noopener">
+          <h3>Project Three</h3>
+          <p>One sentence about what this project does and why it matters.</p>
+          <span class="tags">HTML, CSS, Design</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ================= CONTACT =================
+         ✏️ EDIT: your email (in BOTH the mailto: link and the data-email attribute) and the text. -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p class="bio">Have a project, idea or question? Send me a message.</p>
+      <div class="stack">
+        <a class="link-btn featured" href="mailto:you@example.com">
+          <span class="icon">
+            <!-- ICON: mail -->
+            <svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </span>
+          <span class="label">Send an email</span>
+          <span class="handle">you@example.com</span>
+        </a>
+        <button class="link-btn" id="copy" type="button" data-email="you@example.com">
+          <span class="icon">
+            <!-- ICON: copy -->
+            <svg viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          </span>
+          <span class="label" id="copy-label">Copy email address</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <!-- ✏️ EDIT: your name -->
+    <p>&copy; <span id="year"></span> Your Name</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
